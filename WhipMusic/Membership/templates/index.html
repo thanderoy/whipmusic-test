@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> {% block title %} Home {% endblock title %} </title>
+</head>
+<body>
+
+
+{% block content %}
+<div class="container col-xxl px-4 py-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-8">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <!-- <img src="..." class="img-fluid rounded-start" alt="..."> -->
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{user_details.user}}</h5>
+                      <p class="card-text">Membership: {{user_details.membership}}</p>
+
+                      {% if user.is_premium %}
+                      <p class="card-text"><small class="text-muted">Paid until: </small></p>
+
+                      {% else %}
+
+                      <a  href="{% url 'subscribe' %}" class="btn btn-secondary">Buy Premium</a>
+
+                      {% endif %}
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock content %}
+</body>
+</html>

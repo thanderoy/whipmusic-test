@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} Login {% endblock title %} </title>
+</head>
+<body>
+
+{% block content %}
+<div class="row justify-content-center align-items-center">
+    <div class="card">
+        <form class="p-4" style="max-width: 540px;" action="" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Username...">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password...">
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+            {{ form.errors }}
+            {% for message in messages %}
+                <p id="messages">{{ message }}</p>
+            {% endfor %}
+            <div class="p-2">
+                Don't have an account? <a href="{% url 'register' %}">Sign Up</a>
+            </div>
+        </form>
+
+        
+    </div>
+</div>
+
+{% endblock content %}
+</body>
+</html>
