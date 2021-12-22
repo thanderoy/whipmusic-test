@@ -1,4 +1,5 @@
 from pathlib import Path
+import django_heroku
 
 from decouple import config
 
@@ -15,7 +16,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['2717-41-60-237-177.ngrok.io', 'https://2717-41-60-237-177.ngrok.io']
+ALLOWED_HOSTS = ['whipmusic-test.herokuapp.com', 'https://whipmusic-test.herokuapp.com/']
 
 
 # Application definition
@@ -126,4 +127,7 @@ SECURE_HSTS_SECONDS = 31536000 # 1 year
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
-CSRF_TRUSTED_ORIGINS = ['https://2717-41-60-237-177.ngrok.io']
+CSRF_TRUSTED_ORIGINS = ['https://whipmusic-test.herokuapp.com/']
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
