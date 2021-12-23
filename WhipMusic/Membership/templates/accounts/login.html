@@ -28,7 +28,7 @@
 
             {{ form.errors }}
             {% for message in messages %}
-                <p id="messages">{{ message }}</p>
+                <p id="alert alert-secondary">{{ message }}</p>
             {% endfor %}
             <div class="p-2">
                 Don't have an account? <a href="{% url 'register' %}">Sign Up</a>

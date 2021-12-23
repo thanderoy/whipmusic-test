@@ -19,11 +19,11 @@
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <!-- <img src="..." class="img-fluid rounded-start" alt="..."> -->
+                    <i class="bi-person-circle p-4" style="font-size: 6rem; color: gray;"></i>
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">{{user_details.user}}</h5>
+                      <h5 class="card-title">Username: {{user_details.user}}</h5>
                       <p class="card-text">Membership: {{user_details.membership}}</p>
 
                       {% if user.is_premium %}
