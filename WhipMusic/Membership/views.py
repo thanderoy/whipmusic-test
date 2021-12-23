@@ -103,7 +103,7 @@ def process_payment(name, email, phone, amount):
         "tx_ref":''+str(math.floor(1000000 + random()*9000000)),
         "amount":amount,
         "currency":"USD",
-        "redirect_url":"https://2717-41-60-237-177.ngrok.io/callback",
+        "redirect_url":"https://whipmusic-test.herokuapp.com/callback",
         "payment_options":"card",
         "meta":{
             "consumer_id":23,
