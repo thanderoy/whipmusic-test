@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from .models import *
 
 class CreateUserForm(UserCreationForm):
-    free_membership = Membership.objects.get(membership_type='Free')
+    # free_membership = Membership.objects.get(membership_type='Free')
 
     class Meta(UserCreationForm.Meta):
        model = User
