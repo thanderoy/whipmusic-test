@@ -1,0 +1,1 @@
+web: gunicorn WhipMusic.wsgi --log-file -
